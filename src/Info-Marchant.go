@@ -72,103 +72,114 @@ func (p *Perso) Boutique() {
 
 	switch choice {
 	case "1":
-		p.LimiteInventory() 
-		if p.money < 4 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
-		} else if p.money >= 4 {
-			fmt.Println(" + Éclat De Sucre Vivifiant ")
-			fmt.Println(" - 4 ฿")
-			p.money -= 4
-			p.AddInventory("Éclat De Sucre Vivifiant")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 4 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
+			} else if p.money >= 4 {
+				fmt.Println(" + Éclat De Sucre Vivifiant ")
+				fmt.Println(" - 4 ฿")
+				p.money -= 4
+				p.AddInventory("Éclat De Sucre Vivifiant")
+				p.inventorycount++
+			}
+
 		}
 
 		p.Boutique()
 	case "2":
-		p.LimiteInventory()
-		if p.money < 6 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
-		} else if p.money >= 6 {
-			fmt.Println(" + Miel Vénéneux")
-			fmt.Println(" - 6 ฿")
-			p.money -= 6
-			p.AddInventory("Miel Vénéneux")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 6 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
+			} else if p.money >= 6 {
+				fmt.Println(" + Miel Vénéneux")
+				fmt.Println(" - 6 ฿")
+				p.money -= 6
+				p.AddInventory("Miel Vénéneux")
+				p.inventorycount++
+			}
 		}
 
 		p.Boutique()
 	case "3":
-		p.LimiteInventory()
-		if p.money < 25 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Attaque !")
-		} else if p.money >= 25 {
-			fmt.Println(" + Pain D'épis'Taculaire")
-			fmt.Println(" - 25 ฿")
-			p.money -= 25
-			p.AddAttaque("Pain D'épis'Taculaire")
+		if p.LimiteInventory() {
+			if p.money < 25 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Attaque !")
+			} else if p.money >= 25 {
+				fmt.Println(" + Pain D'épis'Taculaire")
+				fmt.Println(" - 25 ฿")
+				p.money -= 25
+				p.AddAttaque("Pain D'épis'Taculaire")
+			}
 		}
+
 		p.Boutique()
 	case "4":
-		p.LimiteInventory()
-		if p.money < 45 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Arme !")
-		} else if p.money >= 45 {
-			fmt.Println(" + Dague du Donut Délectable ")
-			fmt.Println(" - 45 ฿")
-			p.money -= 45
-			p.AddEquipement("Dague du Donut Délectable")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 45 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Arme !")
+			} else if p.money >= 45 {
+				fmt.Println(" + Dague du Donut Délectable ")
+				fmt.Println(" - 45 ฿")
+				p.money -= 45
+				p.AddEquipement("Dague du Donut Délectable")
+				p.inventorycount++
+			}
 		}
+
 		p.Boutique()
 	case "5":
-		p.LimiteInventory()
-		if p.money < 4 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
-		} else if p.money >= 4 {
-			fmt.Println(" + Bageutte Magique")
-			fmt.Println(" - 4 ฿")
-			p.money -= 4
-			p.AddInventory("Bageutte Magique")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 4 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+			} else if p.money >= 4 {
+				fmt.Println(" + Bageutte Magique")
+				fmt.Println(" - 4 ฿")
+				p.money -= 4
+				p.AddInventory("Bageutte Magique")
+				p.inventorycount++
+			}
 		}
 
 		p.Boutique()
 	case "6":
-		p.LimiteInventory()
-		if p.money < 7 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
-		} else if p.money >= 7 {
-			fmt.Println(" + Fondant Au Chocolat")
-			fmt.Println(" - 7 ฿")
-			p.money -= 7
-			p.AddInventory("Fondant Au Chocolat")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 7 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+			} else if p.money >= 7 {
+				fmt.Println(" + Fondant Au Chocolat")
+				fmt.Println(" - 7 ฿")
+				p.money -= 7
+				p.AddInventory("Fondant Au Chocolat")
+				p.inventorycount++
+			}
 		}
 
 		p.Boutique()
 	case "7":
-		p.LimiteInventory()
-		if p.money < 3 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
-		} else if p.money >= 3 {
-			fmt.Println(" + Ganache À La Vanille")
-			fmt.Println(" - 3 ฿")
-			p.money -= 3
-			p.AddInventory("Ganache À La Vanille")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 3 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+			} else if p.money >= 3 {
+				fmt.Println(" + Ganache À La Vanille")
+				fmt.Println(" - 3 ฿")
+				p.money -= 3
+				p.AddInventory("Ganache À La Vanille")
+				p.inventorycount++
+			}
 		}
 
 		p.Boutique()
 	case "8":
-		p.LimiteInventory()
-		if p.money < 1 {
-			fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
-		} else if p.money >= 1 {
-			fmt.Println(" + Barbe À Papa")
-			fmt.Println(" - 1 ฿")
-			p.money -= 1
-			p.AddInventory("Barbe À Papa")
-			p.inventorycount++
+		if p.LimiteInventory() {
+			if p.money < 1 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+			} else if p.money >= 1 {
+				fmt.Println(" + Barbe À Papa")
+				fmt.Println(" - 1 ฿")
+				p.money -= 1
+				p.AddInventory("Barbe À Papa")
+				p.inventorycount++
+			}
 		}
 
 		p.Boutique()

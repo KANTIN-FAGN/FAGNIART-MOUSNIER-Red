@@ -141,10 +141,12 @@ func (p *Perso) RemoveEquipement(item string) {
 	}
 }
 
-func (p *Perso) LimiteInventory() {
+func (p *Perso) LimiteInventory() bool {
 	if p.inventorycount >= 10 {
 		fmt.Println("Tu a trop de SUCRERIES dans ton inventaire !")
+		return false
 	}
+	return true
 }
 
 func (p *Perso) SpellBook() {
