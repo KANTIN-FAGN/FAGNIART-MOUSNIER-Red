@@ -153,6 +153,18 @@ func (p *Perso) LimiteInventory() bool {
 	}
 	return true
 }
+
+func (p *Perso) LookAttaque(name string) bool {
+	for i := range p.attaque {
+		if i == name {
+			return true
+		}
+	}
+	fmt.Println ("Tu n'a pas", name, "dans tes attaques !")
+	return false
+	
+}
+
 func (p *Perso) LookItemHead() bool {
 	if p.inventory["Baguette Magique"] >= 1 && p.inventory["Barbe à Papa"] >= 1 {
 		return true
@@ -193,7 +205,6 @@ func (p *Perso) CheckUpInventory() bool {
 		fmt.Println("Désole ma sucrerie mais ton inventaire est deja completement amélioré .")
 		return true
 	}
-	
 
 	return false
 }

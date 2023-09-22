@@ -2,8 +2,9 @@ package main
 
 import pc "PROJETRED/src"
 
+var p1 pc.Perso
+
 func main() {
-	var p1 pc.Perso
-	
+
 	p1.MenuDemarrage()
 }

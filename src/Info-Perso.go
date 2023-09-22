@@ -6,19 +6,21 @@ import (
 )
 
 type Perso struct {
-	name           string
-	class          string
-	lvl            int
-	pvmax          int
-	pvnow          int
-	money          int
-	inventory      map[string]int
-	attaque        map[string]int
-	equipement     map[string]int
-	inventorycount int
-	headcount      int
-	bodycount      int
-	bootcount      int
+	name              string
+	class             string
+	lvl               int
+	pvmax             int
+	pvnow             int
+	money             int
+	inventory         map[string]int
+	attaque           map[string]int
+	equipement        map[string]int
+	inventorycount    int
+	inventoryupgrade  int
+	inventorycapacity int
+	headcount         int
+	bodycount         int
+	bootcount         int
 }
 
 func (p *Perso) CharCreation() {
@@ -33,7 +35,7 @@ func (p *Perso) CharCreation() {
 	for {
 		fmt.Printf("Choisis ta classe (parmi Muffin, Cookie, Croissant) : ")
 		fmt.Scan(&p.class)
-		if p.class == "Muffin" || p.class == "Cookie" || p.class == "Croissant" || p.class == "DIEU"{
+		if p.class == "Muffin" || p.class == "Cookie" || p.class == "Croissant" || p.class == "DIEU" {
 			break
 		}
 		fmt.Println("Classe invalide. Veuillez choisir parmi Muffin, Cookie ou Croissant.")
@@ -42,7 +44,7 @@ func (p *Perso) CharCreation() {
 	case "Muffin":
 		p.lvl = 1
 		p.pvmax = 100
-		p.pvnow = p.pvmax/2
+		p.pvnow = p.pvmax / 2
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
@@ -50,23 +52,30 @@ func (p *Perso) CharCreation() {
 	case "Cookie":
 		p.lvl = 1
 		p.pvmax = 80
-		p.pvnow = p.pvmax/2
+		p.pvnow = p.pvmax / 2
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
+		}
+		p.attaque = map[string]int{
+			"Frappe Chocolatée":   1,
+			"Épée en sucre glace": 1,
 		}
 	case "Croissant":
 		p.lvl = 1
 		p.pvmax = 120
-		p.pvnow = p.pvmax/2
+		p.pvnow = p.pvmax / 2
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
 		}
+		p.attaque = map[string]int{
+			"Frappe Chocolatée": 1,
+		}
 	case "DIEU":
 		p.lvl = 999
 		p.pvmax = 9999
-		p.pvnow = 9999
+		p.pvnow = 99
 		p.money = 999999999999999999
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 999,
@@ -76,12 +85,13 @@ func (p *Perso) CharCreation() {
 			"Ganache à La Vanille":     999,
 			"Barbe à Papa":             999,
 		}
+		p.attaque = map[string]int{
+			"Frappe Chocolatée":   1,
+			"Épée en sucre glace": 1,
+		}
 	default:
 		fmt.Println("Classe invalide.")
 		return
-	}
-	p.attaque = map[string]int{
-		"Frappe Chocolatée": 1,
 	}
 	p.equipement = map[string]int{}
 	p.inventorycount = 2
