@@ -69,7 +69,8 @@ func (p *Perso) Boutique() {
 	fmt.Println("6 : Pour Acheter 1 Fondant Au Chocolat À La Cabane Du Marchant ")
 	fmt.Println("7 : Pour Acheter 1 Ganache À La Vanille À La Cabane Du Marchant ")
 	fmt.Println("8 : Pour Acheter 1 Barbe À Papa À La Cabane Du Marchant ")
-	fmt.Println("9 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES ")
+	fmt.Println("9 : Pour Acheter 1 Amélioration de 10 place d'inventaire")
+	fmt.Println("10 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
 	fmt.Println(" ")
 	fmt.Printf("Indique ton choix sucrement délicieux : ")
 	fmt.Scan(&choice)
@@ -197,7 +198,18 @@ func (p *Perso) Boutique() {
 
 		p.Boutique()
 	case "9":
-		fmt.Println("\033[H\033[2J")
+		if p.money < 30 {
+			fmt.Println("Tu n'as pas assez de Berry pour acheter cette Item !")
+		} else if p.money >= 30 {
+			fmt.Println(" + 10 emplacement d'inventaire")
+			fmt.Println(" -30฿")
+			p.money -= 30
+			p.CheckUpInventory()
+			p.UpgradeInventorySlot()
+		}
+
+		p.Boutique()
+	case "10":
 		fmt.Println("À Bientôt Dans La CABANE À SUCRERIES MYSTIQUES")
 		p.patissia()
 	default:

@@ -154,10 +154,10 @@ func (p *Perso) LimiteInventory() bool {
 	return true
 }
 func (p *Perso) LookItemHead() bool {
-	fmt.Println(p.inventory["Baguette Magique"] >= 1)
-	fmt.Println(p.inventory["Barbe à Papa"])
-	fmt.Println(p.inventory["Barbe à Papa"] >= 1)
-	return p.inventory["Baguette Magique"] >= 1 && p.inventory["Barbe à Papa"] >= 1
+	if p.inventory["Baguette Magique"] >= 1 && p.inventory["Barbe à Papa"] >= 1 {
+		return true
+	}
+	return false
 }
 
 func (p *Perso) LookItemBody() bool {
@@ -176,4 +176,24 @@ func (p *Perso) LookItemBoot() bool {
 
 func (p *Perso) SpellBook() {
 	p.attaque["Explosion de Pâte Feuilletée"] = 1
+}
+
+func (p *Perso) UpgradeInventorySlot() {
+	if p.inventoryupgrade < 3 {
+		p.inventorycapacity += 10
+		p.inventoryupgrade++
+	}
+
+	p.inventorycapacity = 10
+	p.inventoryupgrade = 0
+}
+
+func (p *Perso) CheckUpInventory() bool {
+	if p.inventoryupgrade == 3 {
+		fmt.Println("Désole ma sucrerie mais ton inventaire est deja completement amélioré .")
+		return true
+	}
+	
+
+	return false
 }
