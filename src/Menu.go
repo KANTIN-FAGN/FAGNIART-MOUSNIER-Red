@@ -30,18 +30,25 @@ func (p *Perso) Menu() {
 
 	switch choice {
 	case "1":
+		fmt.Println("\033[H\033[2J")
 		p.AccessInventory()
 	case "2":
+		fmt.Println("\033[H\033[2J")
 		p.DisplayInfo()
 	case "3":
+		fmt.Println("\033[H\033[2J")
 		p.AccessAttaque()
 	case "4": 
+	fmt.Println("\033[H\033[2J")
 		p.AccessEquipement()
 	case "5":
+		fmt.Println("\033[H\033[2J")
 		p.patissia()
 	case "6":
+		fmt.Println("\033[H\033[2J")
 		p.Credits()
 	default:
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
 		p.Menu()
 	}

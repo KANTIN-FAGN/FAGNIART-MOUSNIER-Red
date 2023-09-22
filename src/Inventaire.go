@@ -27,14 +27,18 @@ func (p *Perso) AccessInventory() {
 
 	switch choice {
 	case "1":
+		fmt.Println("\033[H\033[2J")
 		p.TakePot()
 		p.AccessInventory()
 	case "2":
+		fmt.Println("\033[H\033[2J")
 		p.PoisonPot()
 		p.AccessInventory()
 	case "3":
+		fmt.Println("\033[H\033[2J")
 		p.Menu()
 	default:
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
 		p.AccessInventory()
 	}
@@ -60,8 +64,10 @@ func (p *Perso) AccessAttaque() {
 
 	switch choice {
 	case "1":
+		fmt.Println("\033[H\033[2J")
 		p.Menu()
 	default:
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
 		p.AccessAttaque()
 	}
@@ -87,8 +93,10 @@ func (p *Perso) AccessEquipement() {
 
 	switch choice {
 	case "1":
+		fmt.Println("\033[H\033[2J")
 		p.Menu()
 	default:
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
 		p.AccessEquipement()
 	}
@@ -106,8 +114,6 @@ func (p *Perso) AddInventory(item string) {
 
 func (p *Perso) AddAttaque(item string) {
 	p.attaque[item] = p.attaque[item] + 1
-	p.inventorycount--
-	fmt.Println("✿ Tu à acheté", item, "! ✿")
 	time.Sleep(1 * time.Second)
 	for i := range p.attaque {
 		fmt.Println("✿ Tu a Aprris ", p.attaque[i], i, " ✿")
@@ -116,16 +122,15 @@ func (p *Perso) AddAttaque(item string) {
 
 func (p *Perso) AddEquipement(item string) {
 	p.equipement[item] = p.equipement[item] + 1
-	fmt.Println("✿ Tu à acheté", item, "! ✿")
 	time.Sleep(1 * time.Second)
 	for i := range p.equipement {
-		fmt.Println("✿ Tu a Acqueris ", p.equipement[i], i, " ✿")
+		fmt.Println("✿ Tu a dans tes EQUIPEMENT", p.equipement[i], i, " ✿")
 	}
 }
 
 func (p *Perso) RemoveInventory(item string) {
 	p.inventory[item] = p.inventory[item] - 1
-	fmt.Println("✿ Tu à Perdu", item, "! ✿")
+	p.inventorycount--
 	time.Sleep(1 * time.Second)
 	for i := range p.inventory {
 		fmt.Println(" Tu a dans ton SAC DE PÂTISSIER MAGIQUE ", p.inventory[i], i, " ✿")
@@ -137,7 +142,7 @@ func (p *Perso) RemoveEquipement(item string) {
 	fmt.Println("✿ Tu à Perdu", item, "! ✿")
 	time.Sleep(1 * time.Second)
 	for i := range p.equipement {
-		fmt.Println(" Tu a dans ton SAC DE PÂTISSIER MAGIQUE ", p.equipement[i], i, " ✿")
+		fmt.Println(" Tu a dans tes EQUIPEMENT ", p.equipement[i], i, " ✿")
 	}
 }
 
@@ -147,6 +152,26 @@ func (p *Perso) LimiteInventory() bool {
 		return false
 	}
 	return true
+}
+func (p *Perso) LookItemHead() bool {
+	fmt.Println(p.inventory["Baguette Magique"] >= 1)
+	fmt.Println(p.inventory["Barbe à Papa"])
+	fmt.Println(p.inventory["Barbe à Papa"] >= 1)
+	return p.inventory["Baguette Magique"] >= 1 && p.inventory["Barbe à Papa"] >= 1
+}
+
+func (p *Perso) LookItemBody() bool {
+	if p.inventory["Fondant Au Chocolat"] >= 2 && p.inventory["Ganache à La Vanille"] >= 1 {
+		return true
+	}
+	return false
+}
+
+func (p *Perso) LookItemBoot() bool {
+	if p.inventory["Fondant Au Chocolat"] >= 1 && p.inventory["Barbe à Papa"] >= 1 {
+		return true
+	}
+	return false
 }
 
 func (p *Perso) SpellBook() {

@@ -6,21 +6,21 @@ import (
 )
 
 func (p Perso) Credits() {
-	fmt.Println("▄████████    ▄████████    ▄████████ ████████▄   ▄█      ███        ▄████████ ")
+	fmt.Println("			▄████████    ▄████████    ▄████████ ████████▄   ▄█      ███        ▄████████ ")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("███    ███   ███    ███   ███    ███ ███   ▀███ ███  ▀█████████▄   ███    ███")
+	fmt.Println("			███    ███   ███    ███   ███    ███ ███   ▀███ ███  ▀█████████▄   ███    ███")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("███    █▀    ███    ███   ███    █▀  ███    ███ ███▌    ▀███▀▀██   ███    █▀ ")
+	fmt.Println("			███    █▀    ███    ███   ███    █▀  ███    ███ ███▌    ▀███▀▀██   ███    █▀ ")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("███         ▄███▄▄▄▄██▀  ▄███▄▄▄     ███    ███ ███▌     ███   ▀   ███   ")
+	fmt.Println("			███         ▄███▄▄▄▄██▀  ▄███▄▄▄     ███    ███ ███▌     ███   ▀   ███   ")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("███        ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███    ███ ███▌     ███     ▀███████████ ")
+	fmt.Println("			███        ▀▀███▀▀▀▀▀   ▀▀███▀▀▀     ███    ███ ███▌     ███     ▀███████████ ")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("███    █▄  ▀███████████   ███    █▄  ███    ███ ███      ███              ███ ")
+	fmt.Println("			███    █▄  ▀███████████   ███    █▄  ███    ███ ███      ███              ███ ")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("███    ███   ███    ███   ███    ███ ███   ▄███ ███      ███        ▄█    ███ ")
+	fmt.Println("			███    ███   ███    ███   ███    ███ ███   ▄███ ███      ███        ▄█    ███ ")
 	time.Sleep(15 * time.Millisecond)
-	fmt.Println("████████▀    ███    ███   ██████████ ████████▀  █▀      ▄████▀    ▄████████▀")
+	fmt.Println("			████████▀    ███    ███   ██████████ ████████▀  █▀      ▄████▀    ▄████████▀")
 	time.Sleep(2 * time.Second)
 	fmt.Println(" ")
 	fmt.Println(" ")
@@ -60,12 +60,15 @@ func (p Perso) Credits() {
 
 	switch choice {
 	case "1":
+		fmt.Println("\033[H\033[2J")
 		p.MenuDemarrage()
 	case "2":
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Merci D'avoir Jouer à DOUGH OR DIE !")
 		return
 	default:
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
-		fmt.Scan(&choice)
+		return
 	}
 }

@@ -24,15 +24,20 @@ var ItemsAccessoires []Item = []Item{
 	{5, "Dague du Donut Délectable", 0, 45},
 	{6, "Bageutte Magique", 0, 4},
 	{7, "Fondant Au Chocolat", 0, 7},
-	{8, "Ganache À La Vanille", 0, 3},
-	{9, "Barbe À Papa", 0, 1},
+	{8, "Ganache à La Vanille", 0, 3},
+	{9, "Barbe à Papa", 0, 1},
 }
 
 func (p *Perso) Boutique() {
 	fmt.Println(" ")
-	fmt.Println("♛♛♛♛♛♛♛♛♛♛♛♛♛♛ CABANE À SUCRERIES MYSTIQUES ♛♛♛♛♛♛♛♛♛♛♛♛♛♛")
+	fmt.Println("               ██╗      █████╗      ██████╗ █████╗ ██████╗  █████╗ ███╗   ██╗███████╗")
+	fmt.Println("               ██║     ██╔══██╗    ██╔════╝██╔══██╗██╔══██╗██╔══██╗████╗  ██║██╔════╝ ")
+	fmt.Println("               ██║     ███████║    ██║     ███████║██████╔╝███████║██╔██╗ ██║█████╗ ")
+	fmt.Println("               ██║     ██╔══██║    ██║     ██╔══██║██╔══██╗██╔══██║██║╚██╗██║██╔══╝  ")
+	fmt.Println("               ███████╗██║  ██║    ╚██████╗██║  ██║██████╔╝██║  ██║██║ ╚████║███████╗ ")
+	fmt.Println("               ╚══════╝╚═╝  ╚═╝     ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝ ")
 	fmt.Println(" ")
-	fmt.Println("✿ il te faut quoi pour aujourd'hui ? ✿")
+	fmt.Println(" ")
 	fmt.Println(" ")
 	fmt.Println("\t ◥◣◥◣◥◣◥◣◥◣◥◣◥◣◥◣ GOURMANDISES ◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤ ")
 	fmt.Println(" ")
@@ -72,14 +77,15 @@ func (p *Perso) Boutique() {
 
 	switch choice {
 	case "1":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 4 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
 			} else if p.money >= 4 {
+				p.AddInventory("Éclat De Sucre Vivifiant")
 				fmt.Println(" + Éclat De Sucre Vivifiant ")
 				fmt.Println(" - 4 ฿")
 				p.money -= 4
-				p.AddInventory("Éclat De Sucre Vivifiant")
 				p.inventorycount++
 			}
 
@@ -87,106 +93,115 @@ func (p *Perso) Boutique() {
 
 		p.Boutique()
 	case "2":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 6 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
 			} else if p.money >= 6 {
+				p.AddInventory("Miel Vénéneux")
 				fmt.Println(" + Miel Vénéneux")
 				fmt.Println(" - 6 ฿")
 				p.money -= 6
-				p.AddInventory("Miel Vénéneux")
 				p.inventorycount++
 			}
 		}
 
 		p.Boutique()
 	case "3":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 25 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Attaque !")
 			} else if p.money >= 25 {
+				p.AddAttaque("Pain D'épis'Taculaire")
 				fmt.Println(" + Pain D'épis'Taculaire")
 				fmt.Println(" - 25 ฿")
 				p.money -= 25
-				p.AddAttaque("Pain D'épis'Taculaire")
 			}
 		}
 
 		p.Boutique()
 	case "4":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 45 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Arme !")
 			} else if p.money >= 45 {
+				p.AddEquipement("Dague du Donut Délectable")
 				fmt.Println(" + Dague du Donut Délectable ")
 				fmt.Println(" - 45 ฿")
 				p.money -= 45
-				p.AddEquipement("Dague du Donut Délectable")
 				p.inventorycount++
 			}
 		}
 
 		p.Boutique()
 	case "5":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 4 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
 			} else if p.money >= 4 {
-				fmt.Println(" + Bageutte Magique")
+				p.AddInventory("Baguette Magique")
+				fmt.Println(" + Baguette Magique")
 				fmt.Println(" - 4 ฿")
 				p.money -= 4
-				p.AddInventory("Bageutte Magique")
 				p.inventorycount++
 			}
 		}
 
 		p.Boutique()
 	case "6":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 7 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
 			} else if p.money >= 7 {
+				p.AddInventory("Fondant Au Chocolat")
 				fmt.Println(" + Fondant Au Chocolat")
 				fmt.Println(" - 7 ฿")
 				p.money -= 7
-				p.AddInventory("Fondant Au Chocolat")
 				p.inventorycount++
 			}
 		}
 
 		p.Boutique()
 	case "7":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 3 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
 			} else if p.money >= 3 {
+				p.AddInventory("Ganache À La Vanille")
 				fmt.Println(" + Ganache À La Vanille")
 				fmt.Println(" - 3 ฿")
 				p.money -= 3
-				p.AddInventory("Ganache À La Vanille")
 				p.inventorycount++
 			}
 		}
 
 		p.Boutique()
 	case "8":
+		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 1 {
 				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
 			} else if p.money >= 1 {
-				fmt.Println(" + Barbe À Papa")
+				p.AddInventory("Barbe à Papa")
+				fmt.Println(" + Barbe à Papa")
 				fmt.Println(" - 1 ฿")
 				p.money -= 1
-				p.AddInventory("Barbe À Papa")
 				p.inventorycount++
 			}
 		}
 
 		p.Boutique()
 	case "9":
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("À Bientôt Dans La CABANE À SUCRERIES MYSTIQUES")
 		p.patissia()
 	default:
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
 		p.Boutique()
 	}

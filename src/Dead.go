@@ -28,9 +28,11 @@ func (p *Perso) Dead() {
 
 	switch choice {
 	case "1": 
+	fmt.Println("\033[H\033[2J")
 		p.Menu()
 		p.Revive()
 	default : 
+	fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
 		p.DisplayInfo()
 	}
