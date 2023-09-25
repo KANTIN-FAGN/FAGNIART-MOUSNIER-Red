@@ -63,18 +63,22 @@ func (c *Monstre) Fight(p *Perso) {
 		time.Sleep(2 * time.Second)
 		fmt.Println("- 5 HP")
 		p.pvnow = p.pvnow - 5
-		time.Sleep(3 * time.Second)
-		
 		p.Dead()
-		fmt.Println("Il te reste ", p.pvnow, "HP /",p.pvmax, "HP")
+		time.Sleep(3 * time.Second)
+
+		p.Dead()
+		fmt.Println("Il te reste ", p.pvnow, "HP /", p.pvmax, "HP")
 		fmt.Println(" ")
-		fmt.Println("Il reste a cette Carrie", c.pvnow,"HP /", c.pvmax, "HP")
+		fmt.Println("Il reste a cette Carrie", c.pvnow, "HP /", c.pvmax, "HP")
 		fmt.Println(" ")
+		time.Sleep(2 * time.Second)
 		fmt.Println(" ")
 		fmt.Println("A ton tour ! ")
 		fmt.Println(" ")
 		fmt.Println("1 : Frappe Chocolatée (-7 HP à votre adversaire)")
 		fmt.Println("2 : Épée en sucre glace (-10 HP à votre adversaire)")
+		fmt.Println("3 : Utiliser une potion de soin (+ 50 HP)")
+		fmt.Println("4 : Utiliser une piqure de lait concentré (+ 50 de Mana)")
 		fmt.Println(" ")
 		fmt.Printf("Choisie ton attaque : ")
 		fmt.Scan(&choice)
@@ -83,22 +87,39 @@ func (c *Monstre) Fight(p *Perso) {
 		switch choice {
 		case "1":
 			fmt.Println("\033[H\033[2J")
-			if p.LookAttaque("Frappe Chocolatée") {
+			if p.mananow < 7 {
+				fmt.Println("Tu a pas assez de mana pour continuer, prendre une piqure de lait concentré !!")
+			} else if p.LookAttaque("Frappe Chocolatée") {
 				fmt.Println("Tu lui à décroché un pain au chocolat !")
 				fmt.Println("Carrie : - 7 HP")
+				fmt.Println("- 8 de Mana")
 				c.pvnow -= 7
-				fmt.Println(c.pvnow, "/", c.pvmax)
+				p.mananow -= 8
+				fmt.Println("Vie de la Carrie", c.pvnow, "/", c.pvmax)
+				fmt.Println("Mana restante", p.mananow, "/", p.manamax)
 				c.DeadMonstre()
-			}
+				}
+			
 		case "2":
 			fmt.Println("\033[H\033[2J")
-			if p.LookAttaque("Épée en sucre glace") {
+			if p.mananow < 14 {
+				fmt.Println("Tu a pas assez de mana pour continuer, prendre une piqure de lait concentré !!")
+			} else if  p.LookAttaque("Épée en sucre glace") {
 				fmt.Println("Tu lui à envoyé un coup d'épée sucrement parfait !!")
 				fmt.Println("Carrie : - 10 HP")
+				fmt.Println("- 14 de Mana")
 				c.pvnow -= 10
-				fmt.Println(c.pvnow, "/", c.pvmax)
+				p.mananow -= 14
+				fmt.Println("Vie de la Carrie", c.pvnow, "/", c.pvmax)
+				fmt.Println("Mana restante", p.mananow, "/", p.manamax)
 				c.DeadMonstre()
 			}
+		case "3":
+			fmt.Println("\033[H\033[2J")
+			p.TakePot()
+		case "4":
+			fmt.Println("\033[H\033[2J")
+			p.ManaPotion()
 		default:
 			fmt.Println("\033[H\033[2J")
 			fmt.Println("Dommage pour toi tu à passé ton tour...")
@@ -135,37 +156,5 @@ func (c *Monstre) Fight(p *Perso) {
 			p.ForetNoir()
 
 		}
-	}
-	if p.pvnow <= 0 {
-		fmt.Println("\033[H\033[2J")
-		fmt.Println("			██╗      ██████╗ ███████╗███████╗ ")
-		fmt.Println("			██║     ██╔═══██╗██╔════╝██╔════╝  ")
-		fmt.Println("			██║     ██║   ██║███████╗█████╗ ")
-		fmt.Println("			██║     ██║   ██║╚════██║██╔══╝   ")
-		fmt.Println("			███████╗╚██████╔╝███████║███████╗██╗██╗██╗")
-		fmt.Println("			╚══════╝ ╚═════╝ ╚══════╝╚══════╝╚═╝╚═╝╚═╝")
-		fmt.Println(" ")
-		fmt.Println(" ")
-		fmt.Println("Dommage !! Tu n'a pas réussi à tuer cette Carrie.")
-		fmt.Println(" ")
-		fmt.Println(" ")
-		fmt.Println("1 : Pour recombattre la Carrie")
-		fmt.Println("2 : Retourner dans la fôret Noir")
-		fmt.Scan(&choice)
-		fmt.Println(" ")
-
-		switch choice {
-		case "1":
-			fmt.Println("\033[H\033[2J")
-			c.Fight(p)
-		case "2":
-			fmt.Println("\033[H\033[2J")
-			p.ForetNoir()
-		default:
-			fmt.Println("\033[H\033[2J")
-			p.ForetNoir()
-
-		}
-
 	}
 }

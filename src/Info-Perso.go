@@ -12,6 +12,8 @@ type Perso struct {
 	pvmax             int
 	pvnow             int
 	money             int
+	manamax int
+	mananow int
 	inventory         map[string]int
 	attaque           map[string]int
 	equipement        map[string]int
@@ -94,6 +96,8 @@ func (p *Perso) CharCreation() {
 		return
 	}
 	p.equipement = map[string]int{}
+	p.manamax = 100
+	p.mananow = 100
 	p.inventorycount = 2
 	p.headcount = 0
 	p.bodycount = 0

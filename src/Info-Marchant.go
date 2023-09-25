@@ -15,17 +15,18 @@ type Item struct {
 var ItemsGourmandises []Item = []Item{
 	{1, "Éclat De Sucre Vivifiant", 0, 3},
 	{2, "Miel Vénéneux", 0, 6},
+	{3, "Piqure de Lait Concentré", 0, 3},
 }
 var ItemsMarmithon []Item = []Item{
-	{3, "Frappe Chocolatée", 0, 25},
-	{4, "Pain D'épis'taculaire", 0, 25},
+	{1, "Frappe Chocolatée", 0, 25},
+	{2, "Pain D'épis'taculaire", 0, 25},
+	{3, "Épée en sucre glace", 0, 46},
 }
 var ItemsAccessoires []Item = []Item{
-	{5, "Dague du Donut Délectable", 0, 45},
-	{6, "Bageutte Magique", 0, 4},
-	{7, "Fondant Au Chocolat", 0, 7},
-	{8, "Ganache à La Vanille", 0, 3},
-	{9, "Barbe à Papa", 0, 1},
+	{1, "Bageutte Magique", 0, 4},
+	{2, "Fondant Au Chocolat", 0, 7},
+	{3, "Ganache à La Vanille", 0, 3},
+	{4, "Barbe à Papa", 0, 1},
 }
 
 func (p *Perso) Boutique() {
@@ -61,16 +62,18 @@ func (p *Perso) Boutique() {
 	fmt.Println(" ")
 
 	time.Sleep(2 * time.Second)
-	fmt.Println("1 : Pour Acheter 1 Éclat De Sucre Vivifiant À La Cabane Du Marchant ")
-	fmt.Println("2 : Pour Acheter 1 Fiolle  De Miel Vénéneux À La Cabane Du Marchant  ")
-	fmt.Println("3 : Pour Acheter 1 Pain D'épis'Taculaire À La Cabane Du Marchant ")
-	fmt.Println("4 : Pour Acheter 1 Dague du Donut Délectable À La Cabane Du Marchant ")
-	fmt.Println("5 : Pour Acheter 1 Bageutte Magique À La Cabane Du Marchant ")
-	fmt.Println("6 : Pour Acheter 1 Fondant Au Chocolat À La Cabane Du Marchant ")
-	fmt.Println("7 : Pour Acheter 1 Ganache À La Vanille À La Cabane Du Marchant ")
-	fmt.Println("8 : Pour Acheter 1 Barbe À Papa À La Cabane Du Marchant ")
-	fmt.Println("9 : Pour Acheter 1 Amélioration de 10 place d'inventaire")
-	fmt.Println("10 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
+	fmt.Println("1 : Pour Acheter 1 Éclat De Sucre Vivifiant  ")
+	fmt.Println("2 : Pour Acheter 1 Fiolle  De Miel Vénéneux   ")
+	fmt.Println("3 : Pour Acheter 1 Piqure de Lait Concentré")
+	fmt.Println("4 : Pour Acheter 1 Pain D'épis'Taculaire  ")
+	fmt.Println("5 : Pour Acheter 1 Dague du Donut Délectable  ")
+	fmt.Println("6 : Pour Acheter 1 Bageutte Magique  ")
+	fmt.Println("7 : Pour Acheter 1 Fondant Au Chocolat  ")
+	fmt.Println("8 : Pour Acheter 1 Ganache À La Vanille  ")
+	fmt.Println("9 : Pour Acheter 1 Barbe À Papa  ")
+	fmt.Println("10 : Pour Acheter l'Épée en sucre glace ")
+	fmt.Println("11 : Pour Acheter 1 Amélioration de 10 place d'inventaire")
+	fmt.Println("12 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
 	fmt.Println(" ")
 	fmt.Printf("Indique ton choix sucrement délicieux : ")
 	fmt.Scan(&choice)
@@ -108,7 +111,20 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
+
 	case "3":
+		fmt.Println("\033[H\033[2J")
+		if p.LimiteInventory() {
+			if p.money < 3 {
+				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Attaque !")
+			} else if p.money >= 3 {
+				p.AddInventory("Piqure de Lait Concentré")
+				fmt.Println("+ 1 Piqure de Lait Concentré")
+				fmt.Println("- 9 ฿")
+				p.money -= 3
+			}
+		}
+	case "4":
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 25 {
@@ -122,7 +138,7 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
-	case "4":
+	case "5":
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 45 {
@@ -137,7 +153,7 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
-	case "5":
+	case "6":
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 4 {
@@ -152,7 +168,7 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
-	case "6":
+	case "7":
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 7 {
@@ -167,7 +183,7 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
-	case "7":
+	case "8":
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 3 {
@@ -182,7 +198,7 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
-	case "8":
+	case "9":
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 1 {
@@ -197,19 +213,32 @@ func (p *Perso) Boutique() {
 		}
 
 		p.Boutique()
-	case "9":
+	case "10":
+		fmt.Println("\033[H\033[2J")
+		if p.LimiteInventory() {
+			if p.money < 46 {
+				fmt.Println("Tu n'as pas assez de Berry pour acheter cette Item !")
+			} else if p.money >= 46 {
+				fmt.Println("+ l'Épée en sucre glace")
+				fmt.Println("- 46 ฿ ")
+				p.money -= 46
+				p.inventorycount++
+			}
+		}
+
+	case "11":
 		if p.money < 30 {
 			fmt.Println("Tu n'as pas assez de Berry pour acheter cette Item !")
 		} else if p.money >= 30 {
 			fmt.Println(" + 10 emplacement d'inventaire")
-			fmt.Println(" -30฿")
+			fmt.Println(" - 30 ฿")
 			p.money -= 30
 			p.CheckUpInventory()
 			p.UpgradeInventorySlot()
 		}
 
 		p.Boutique()
-	case "10":
+	case "12":
 		fmt.Println("À Bientôt Dans La CABANE À SUCRERIES MYSTIQUES")
 		p.patissia()
 	default:
