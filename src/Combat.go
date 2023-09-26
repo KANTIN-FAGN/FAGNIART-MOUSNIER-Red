@@ -54,6 +54,7 @@ func (c *Monstre) Fight(p *Perso) {
 	fmt.Println(" ")
 	c.CharCreationMonstre()
 	fmt.Println("Attention prepare toi, tu vas rentrer dans la cage en chocolat. ")
+	tourDeCombat := 1
 	for !(c.pvnow <= 0 || p.pvnow <= 0) {
 		fmt.Println(" ")
 		fmt.Println(" ")
@@ -63,9 +64,8 @@ func (c *Monstre) Fight(p *Perso) {
 		time.Sleep(2 * time.Second)
 		fmt.Println("- 5 HP")
 		p.pvnow = p.pvnow - 5
-		p.Dead()
 		time.Sleep(3 * time.Second)
-
+		
 		p.Dead()
 		fmt.Println("Il te reste ", p.pvnow, "HP /", p.pvmax, "HP")
 		fmt.Println(" ")
@@ -123,7 +123,9 @@ func (c *Monstre) Fight(p *Perso) {
 		default:
 			fmt.Println("\033[H\033[2J")
 			fmt.Println("Dommage pour toi tu à passé ton tour...")
+
 		}
+		tourDeCombat++
 	}
 	if c.pvnow <= 0 {
 		fmt.Println("\033[H\033[2J")
