@@ -14,8 +14,8 @@ type Item struct {
 
 var ItemsGourmandises []Item = []Item{
 	{1, "Éclat De Sucre Vivifiant", 0, 3},
-	{2, "Miel Vénéneux", 0, 6},
-	{3, "Piqure de Lait Concentré", 0, 3},
+	{2, "Fiolle De Miel Vénéneux", 0, 6},
+	{3, "Piqure De Lait Concentré", 0, 3},
 }
 var ItemsMarmithon []Item = []Item{
 	{1, "Frappe Chocolatée", 0, 25},
@@ -67,14 +67,14 @@ func (p *Perso) Boutique() {
 	fmt.Println("3 : Pour Acheter 1 Piqure de Lait Concentré")
 	fmt.Println("4 : Pour Acheter 1 Pain D'épis'Taculaire  ")
 	fmt.Println("5 : Pour Acheter 1 Dague du Donut Délectable  ")
-	fmt.Println("6 : Pour Acheter 1 Bageutte Magique  ")
+	fmt.Println("6 : Pour Acheter 1 Baguette Magique  ")
 	fmt.Println("7 : Pour Acheter 1 Fondant Au Chocolat  ")
 	fmt.Println("8 : Pour Acheter 1 Ganache À La Vanille  ")
 	fmt.Println("9 : Pour Acheter 1 Barbe À Papa  ")
 	fmt.Println("10 : Pour Acheter l'Épée en sucre glace ")
 	fmt.Println("11 : Pour Acheter 1 Amélioration de 10 place d'inventaire")
-	fmt.Println("12 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
-	fmt.Println(" ")
+	fmt.Println("12 : ")
+	fmt.Println("13 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
 	fmt.Printf("Indique ton choix sucrement délicieux : ")
 	fmt.Scan(&choice)
 	fmt.Println(" ")
@@ -227,6 +227,7 @@ func (p *Perso) Boutique() {
 		}
 
 	case "11":
+		fmt.Println("\033[H\033[2J")
 		if p.money < 30 {
 			fmt.Println("Tu n'as pas assez de Berry pour acheter cette Item !")
 		} else if p.money >= 30 {
@@ -239,6 +240,10 @@ func (p *Perso) Boutique() {
 
 		p.Boutique()
 	case "12":
+		fmt.Println("\033[H\033[2J")
+
+	case "13":
+		fmt.Println("\033[H\033[2J")
 		fmt.Println("À Bientôt Dans La CABANE À SUCRERIES MYSTIQUES")
 		p.patissia()
 	default:

@@ -98,13 +98,13 @@ func (c *Monstre) Fight(p *Perso) {
 				fmt.Println("Vie de la Carrie", c.pvnow, "/", c.pvmax)
 				fmt.Println("Mana restante", p.mananow, "/", p.manamax)
 				c.DeadMonstre()
-				}
-			
+			}
+
 		case "2":
 			fmt.Println("\033[H\033[2J")
 			if p.mananow < 14 {
 				fmt.Println("Tu a pas assez de mana pour continuer, prendre une piqure de lait concentré !!")
-			} else if  p.LookAttaque("Épée en sucre glace") {
+			} else if p.LookAttaque("Épée en sucre glace") {
 				fmt.Println("Tu lui à envoyé un coup d'épée sucrement parfait !!")
 				fmt.Println("Carrie : - 10 HP")
 				fmt.Println("- 14 de Mana")

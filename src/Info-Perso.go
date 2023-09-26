@@ -12,8 +12,8 @@ type Perso struct {
 	pvmax             int
 	pvnow             int
 	money             int
-	manamax int
-	mananow int
+	manamax           int
+	mananow           int
 	inventory         map[string]int
 	attaque           map[string]int
 	equipement        map[string]int
@@ -81,7 +81,8 @@ func (p *Perso) CharCreation() {
 		p.money = 999999999999999999
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 999,
-			"Miel Vénéneux":            999,
+			"Fiolle De Miel Vénéneux":  999,
+			"Piqure De Lait Concentré": 999,
 			"Bageutte Magique":         999,
 			"Fondant Au Chocolat":      999,
 			"Ganache à La Vanille":     999,
