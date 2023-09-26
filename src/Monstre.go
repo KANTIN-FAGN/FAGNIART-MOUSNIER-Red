@@ -23,19 +23,3 @@ func (c *Monstre) DeadMonstre() {
 		fmt.Println("tu a pulvérisé la Carrie, Bien joué !!!")
 	}
 }
-
-func (p *Perso) GoblinPattern(c Monstre) {
-	var damage int
-	for p.pvnow > 0 {
-		if c.tour%3 == 0 {
-			damage = 2 * c.pointatt
-		} else {
-			damage = c.pointatt
-		}
-	}
-	p.pvnow -= damage
-
-	fmt.Printf("Tour %d: La carrie inflige %d dégats a toi ma sucrerie, Points de vie restants : %d\n", c.tour, c.pointatt, p.pvnow)
-
-	c.tour++
-}

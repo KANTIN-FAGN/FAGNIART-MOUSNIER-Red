@@ -54,21 +54,38 @@ func (c *Monstre) Fight(p *Perso) {
 	fmt.Println(" ")
 	c.CharCreationMonstre()
 	fmt.Println("Attention prepare toi, tu vas rentrer dans la cage en chocolat. ")
+	tourDeCombat := 1
 	for !(c.pvnow <= 0 || p.pvnow <= 0) {
-		fmt.Println(" ")
-		fmt.Println(" ")
-		time.Sleep(2 * time.Second)
-		fmt.Println("Le monstre attaque !")
-		fmt.Println(" ")
-		time.Sleep(2 * time.Second)
-		fmt.Println("- 5 HP")
-		p.pvnow = p.pvnow - 5
-		time.Sleep(3 * time.Second)
-		
+		fmt.Println("vous êtes au tour:", tourDeCombat)
+
+		if tourDeCombat%3 == 0 {
+			fmt.Println(" ")
+			fmt.Println(" ")
+			time.Sleep(2 * time.Second)
+			fmt.Print(" Attention, carrie s'enerve ! Elle inflige le double de ses dégats ce tour !")
+			fmt.Println(" ")
+			degats := 5 * 2
+			time.Sleep(2 * time.Second)
+			fmt.Println("- 10 HP")
+			p.pvnow -= degats
+			time.Sleep(3 * time.Second)
+			p.Dead()
+		} else {
+			fmt.Println(" ")
+			fmt.Println(" ")
+			time.Sleep(2 * time.Second)
+			fmt.Println("Le monstre attaque !")
+			fmt.Println(" ")
+			time.Sleep(2 * time.Second)
+			fmt.Println("- 5 HP")
+			p.pvnow = p.pvnow - 5
+			time.Sleep(3 * time.Second)
+		}
+
 		p.Dead()
-		fmt.Println("Il te reste ", p.pvnow, "HP /",p.pvmax, "HP")
+		fmt.Println("Il te reste ", p.pvnow, "HP /", p.pvmax, "HP")
 		fmt.Println(" ")
-		fmt.Println("Il reste a cette Carrie", c.pvnow,"HP /", c.pvmax, "HP")
+		fmt.Println("Il reste a cette Carrie", c.pvnow, "HP /", c.pvmax, "HP")
 		fmt.Println(" ")
 		fmt.Println(" ")
 		fmt.Println("A ton tour ! ")
@@ -102,7 +119,9 @@ func (c *Monstre) Fight(p *Perso) {
 		default:
 			fmt.Println("\033[H\033[2J")
 			fmt.Println("Dommage pour toi tu à passé ton tour...")
+
 		}
+		tourDeCombat++
 	}
 	if c.pvnow <= 0 {
 		fmt.Println("\033[H\033[2J")
