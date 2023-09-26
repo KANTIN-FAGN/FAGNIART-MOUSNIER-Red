@@ -4,7 +4,7 @@ import "fmt"
 
 var choice string
 
-func (p *Perso) Menu() {
+func (p Perso) Menu() {
 
 	fmt.Println(" ███▄ ▄███▓▓█████  ███▄    █  █    ██")
 	fmt.Println("▓██▒▀█▀ ██▒▓█   ▀  ██ ▀█   █  ██  ▓██▒")
@@ -23,6 +23,7 @@ func (p *Perso) Menu() {
 	fmt.Println("4 : EQUIPEMENT")
 	fmt.Println("5 : ALLER À PÂTISSIA")
 	fmt.Println("6 : CREDITS")
+	fmt.Println("7 : QUI SONT'ILS ?")
 	fmt.Println(" ")
 	fmt.Printf("Indique ton choix sucrement délicieux : ")
 	fmt.Scan(&choice)
@@ -47,6 +48,9 @@ func (p *Perso) Menu() {
 	case "6":
 		fmt.Println("\033[H\033[2J")
 		p.Credits()
+	case "7":
+		fmt.Println("\033[H\033[2J")
+
 	default:
 		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")
