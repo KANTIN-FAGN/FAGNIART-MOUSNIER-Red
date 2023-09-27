@@ -23,6 +23,7 @@ type Perso struct {
 	headcount         int
 	bodycount         int
 	bootcount         int
+	initiative        int
 }
 
 func (p *Perso) CharCreation() {
