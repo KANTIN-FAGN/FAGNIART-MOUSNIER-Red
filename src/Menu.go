@@ -50,7 +50,7 @@ func (p Perso) Menu() {
 		p.Credits()
 	case "7":
 		fmt.Println("\033[H\033[2J")
-
+		p.QuiSontIls()
 	default:
 		fmt.Println("\033[H\033[2J")
 		fmt.Println("Recommence mon donuts sucré au sucre ! ")

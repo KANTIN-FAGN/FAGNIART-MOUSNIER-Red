@@ -78,7 +78,7 @@ func (p *Perso) AccessEquipement() {
 	fmt.Println(" ")
 	count := 1
 	for i, e := range p.equipement {
-		fmt.Printf("✿ %d -%s : %d\n", count, i, e)
+		fmt.Printf("✿%s : %d\n", i, e)
 		fmt.Println(" ")
 		count++
 	}
@@ -105,18 +105,15 @@ func (p *Perso) AccessEquipement() {
 func (p *Perso) AddInventory(item string) {
 	p.inventory[item] = p.inventory[item] + 1
 	p.inventorycount++
-	fmt.Println("✿ Tu à acheté", item, "! ✿")
+	fmt.Println("✿ Tu à obtenu", item, "! ✿")
 	time.Sleep(1 * time.Second)
-	for i := range p.inventory {
-		fmt.Println("✿ Tu a dans ton SAC DE PÂTISSIER MAGIQUE ", p.inventory[i], i, " ✿")
-	}
 }
 
 func (p *Perso) AddAttaque(item string) {
 	p.attaque[item] = p.attaque[item] + 1
 	time.Sleep(1 * time.Second)
 	for i := range p.attaque {
-		fmt.Println("✿ Tu a Aprris ", p.attaque[i], i, " ✿")
+		fmt.Println("✿ Tu a Apris ", p.attaque[i], i, " ✿")
 	}
 }
 
@@ -132,18 +129,12 @@ func (p *Perso) RemoveInventory(item string) {
 	p.inventory[item] = p.inventory[item] - 1
 	p.inventorycount--
 	time.Sleep(1 * time.Second)
-	for i := range p.inventory {
-		fmt.Println(" Tu a dans ton SAC DE PÂTISSIER MAGIQUE ", p.inventory[i], i, " ✿")
-	}
 }
 
 func (p *Perso) RemoveEquipement(item string) {
 	p.equipement[item] = p.equipement[item] - 1
 	fmt.Println("✿ Tu à Perdu", item, "! ✿")
 	time.Sleep(1 * time.Second)
-	for i := range p.equipement {
-		fmt.Println(" Tu a dans tes EQUIPEMENT ", p.equipement[i], i, " ✿")
-	}
 }
 
 func (p *Perso) LimiteInventory() bool {
@@ -184,10 +175,6 @@ func (p *Perso) LookItemBoot() bool {
 		return true
 	}
 	return false
-}
-
-func (p *Perso) SpellBook() {
-	p.attaque["Explosion de Pâte Feuilletée"] = 1
 }
 
 func (p *Perso) UpgradeInventorySlot() {

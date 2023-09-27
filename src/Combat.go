@@ -154,22 +154,17 @@ func (c *Monstre) Fight(p *Perso) {
 		fmt.Println(" ")
 		fmt.Println("Il te reste : ", p.pvnow, "/", p.pvmax)
 		fmt.Println(" ")
-		fmt.Println("1 : Pour recombattre une Carrie")
-		fmt.Println("2 : Retourner dans la fôret Noir")
+		fmt.Println("1 : Pour Aller à la Fontaine Au Chocolat")
 		fmt.Scan(&choice)
 		fmt.Println(" ")
 
 		switch choice {
 		case "1":
 			fmt.Println("\033[H\033[2J")
-			c.Fight(p)
-		case "2":
-			fmt.Println("\033[H\033[2J")
-			p.ForetNoir()
+			p.FontaineChocolat()
 		default:
 			fmt.Println("\033[H\033[2J")
 			p.ForetNoir()
-
 		}
 	}
 }

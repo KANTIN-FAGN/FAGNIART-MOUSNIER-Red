@@ -24,4 +24,3 @@ func (c *Monstre) DeadMonstre() {
 		fmt.Println("tu a pulvérisé la Carrie, Bien joué !!!")
 	}
 }
-
