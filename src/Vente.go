@@ -65,7 +65,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 2 ฿")
 			p.money += 2
 		} else if p.inventory["Éclat De Sucre Vivifiant"] <= 0 {
-			fmt.Println("Tu n'a pas d'Éclat De Sucre Vivifiant dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas d'Éclat De Sucre Vivifiant dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "2":
@@ -76,7 +76,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 5 ฿")
 			p.money += 2
 		} else if p.inventory["Fiolle  De Miel Vénéneux"] <= 0 {
-			fmt.Println("Tu n'a pas de Fiolle  De Miel Vénéneux dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas de Fiolle  De Miel Vénéneux dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "3":
@@ -87,7 +87,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 2 ฿")
 			p.money += 2
 		} else if p.inventory["Piqure De Lait Concentré"] <= 0 {
-			fmt.Println("Tu n'a pas de Piqure De Lait Concentré dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas de Piqure De Lait Concentré dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "4":
@@ -98,7 +98,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 3 ฿")
 			p.money += 3
 		} else if p.inventory["Baguette Magique"] <= 0 {
-			fmt.Println("Tu n'a pas de Baguette Magique dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas de Baguette Magique dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "5":
@@ -109,7 +109,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 6 ฿")
 			p.money += 6
 		} else if p.inventory["Fondant Au Chocolat"] <= 0 {
-			fmt.Println("Tu n'a pas de Fondant Au Chocolat dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas de Fondant Au Chocolat dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "6":
@@ -120,7 +120,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 2 ฿")
 			p.money += 2
 		} else if p.inventory["Ganache à La Vanille"] <= 0 {
-			fmt.Println("Tu n'a pas de Ganache à La Vanille dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas de Ganache à La Vanille dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "7":
@@ -131,7 +131,7 @@ func (p *Perso) Vente() {
 			fmt.Println("+ 1 ฿")
 			p.money += 1
 		} else if p.inventory["Barbe à Papa"] <= 0 {
-			fmt.Println("Tu n'a pas de Barbe à Papa dans ton sac à dos pour vendre !")
+			fmt.Println("Tu n'as pas de Barbe à Papa dans ton sac à dos pour vendre !")
 		}
 		p.Vente()
 	case "8":

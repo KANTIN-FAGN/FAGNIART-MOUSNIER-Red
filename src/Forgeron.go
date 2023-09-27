@@ -42,9 +42,9 @@ func (p *Perso) Forgeron() {
 	fmt.Println(" ")
 	fmt.Println(" ")
 	fmt.Println(" ")
-	fmt.Println("Salut à toi jeune voyageur !")
+	fmt.Println("Salut à toi", p.name, "!")
 	fmt.Println(" ")
-	fmt.Println("Bienvenue chez-moi, dans ma FORGE je peux vous proposer des crafts sucrement merveilleux ! ")
+	fmt.Println("Bienvenue dans ma boulangerie, je peux vous proposer des crafts simplement merveilleux !")
 	fmt.Println("Voici ce que je te propose :")
 	fmt.Println(" ")
 	fmt.Println("	◥◣◥◣◥◣◥◣◥◣◥◣◥◣◥◣ CONSTRUCTION DES PROTECTIONS ◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤")
@@ -82,7 +82,7 @@ func (p *Perso) Forgeron() {
 		if h.LimiteHead() {
 			if p.LookItemHead() {
 				if p.money < 10 {
-					fmt.Println("Tu na pas assez de BERRY pour construire ta COURONNE EN SUCRE CARAMÉLISÉ")
+					fmt.Println("Tu n'as pas assez de BERRY pour construire ta COURONNE EN SUCRE CARAMÉLISÉ")
 				} else if p.money >= 10 {
 					p.RemoveInventory("Baguette Magique")
 					p.RemoveInventory("Barbe à Papa")
@@ -114,7 +114,7 @@ func (p *Perso) Forgeron() {
 		if t.LimiteBody() {
 			if p.LookItemBody() {
 				if p.money < 15 {
-					fmt.Println("Tu na pas assez de BERRY pour construire ton ARMURE DE MACARONS MAGIQUES")
+					fmt.Println("Tu n'as pas assez de BERRY pour construire ton ARMURE DE MACARONS MAGIQUES")
 				} else if p.money >= 15 {
 					p.RemoveInventory("Fondant Au Chocolat")
 					p.RemoveInventory("Fondant Au Chocolat")
@@ -146,7 +146,7 @@ func (p *Perso) Forgeron() {
 		if u.LimiteBoot() {
 			if p.LookItemBoot() {
 				if p.money < 7 {
-					fmt.Println("Tu na pas assez de BERRY pour construire tes BOTTES DE COURSE CHOCOLATEE")
+					fmt.Println("Tu n'as pas assez de BERRY pour construire tes BOTTES DE COURSE CHOCOLATEE")
 				} else if p.money >= 7 {
 					p.RemoveInventory("Fondant Au Chocolat")
 					p.RemoveInventory("Barbe à Papa")
@@ -176,13 +176,13 @@ func (p *Perso) Forgeron() {
 	case "4":
 		fmt.Println("\033[H\033[2J")
 		if p.equipement["COURONNE EN SUCRE CARAMÉLISÉ"] < 0 {
-			fmt.Println("Tu n'a pas de COURONNE EN SUCRE CARAMÉLISÉ dans tes équipement")
+			fmt.Println("Tu n'as pas de COURONNE EN SUCRE CARAMÉLISÉ dans tes équipement")
 		} else if p.equipement["COURONNE EN SUCRE CARAMÉLISÉ"] >= 1 {
 			if p.inventory["Skittles"] < 2 {
 				fmt.Println("Tu n'a pas assez de Skittles pour réparer ta COURONNE EN SUCRE CARAMÉLISÉ")
 			} else if p.inventory["Skittles"] >= 2 {
 				if p.money < 24 {
-					fmt.Println("Tu na pas assez de BERRY pour réparer ta COURONNE EN SUCRE CARAMÉLISÉ")
+					fmt.Println("Tu n'as pas assez de BERRY pour réparer ta COURONNE EN SUCRE CARAMÉLISÉ")
 				} else if p.money >= 24 {
 					p.RemoveInventory("Skittles")
 					p.RemoveInventory("Skittles")
@@ -201,13 +201,13 @@ func (p *Perso) Forgeron() {
 	case "5":
 		fmt.Println("\033[H\033[2J")
 		if p.equipement["ARMURE DE MACARONS MAGIQUES"] < 0 {
-			fmt.Println("Tu n'a pas d'ARMURE DE MACARONS MAGIQUES dans tes équipement")
+			fmt.Println("Tu n'as pas d'ARMURE DE MACARONS MAGIQUES dans tes équipement")
 		} else if p.equipement["ARMURE DE MACARONS MAGIQUES"] >= 1{
 			if p.inventory["Skittles"] < 1 {
-				fmt.Println("Tu na pas assez de Skittles pour réparer l'ARMURE DE MACARONS MAGIQUES")
+				fmt.Println("Tu n'as pas assez de Skittles pour réparer l'ARMURE DE MACARONS MAGIQUES")
 			} else if p.inventory["Skittles"] >= 1 {
 				if p.money < 17 {
-					fmt.Println("Tu na pas assez de BERRY pour réparer l'ARMURE DE MACARONS MAGIQUES")
+					fmt.Println("Tu n'as pas assez de BERRY pour réparer l'ARMURE DE MACARONS MAGIQUES")
 				} else if p.money >= 17 {
 					p.RemoveInventory("Skittles")
 					fmt.Println("- 1 Skittles\n")
@@ -226,13 +226,13 @@ func (p *Perso) Forgeron() {
 	case "6":
 		fmt.Println("\033[H\033[2J")
 		if p.equipement["BOTTES DE COURSE CHOCOLATEE"] < 0 {
-			fmt.Println("Tu n'a pas de BOTTES DE COURSE CHOCOLATEE dans tes équipement")
+			fmt.Println("Tu n'as pas de BOTTES DE COURSE CHOCOLATEE dans tes équipement")
 		} else if p.equipement["BOTTES DE COURSE CHOCOLATEE"] >= 1 {
 			if p.inventory["Skittles"] < 3 {
-				fmt.Println("Tu na pas assez de Skittles pour réparer tes BOTTES DE COURSE CHOCOLATEE")
+				fmt.Println("Tu n'as pas assez de Skittles pour réparer tes BOTTES DE COURSE CHOCOLATEE")
 			} else if p.inventory["Skittles"] >= 3 {
 				if p.money < 12 {
-					fmt.Println("Tu na pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
+					fmt.Println("Tu n'as pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
 				} else if p.money >= 12 {
 					p.RemoveInventory("Skittles")
 					p.RemoveInventory("Skittles")
@@ -253,10 +253,10 @@ func (p *Perso) Forgeron() {
 	case "7":
 		fmt.Println("\033[H\033[2J")
 		if p.equipement["COURONNE EN SUCRE CARAMÉLISÉ"] < 0 {
-			fmt.Println("Tu n'a pas de COURONNE EN SUCRE CARAMÉLISÉ dans tes équipement")
+			fmt.Println("Tu n'as pas de COURONNE EN SUCRE CARAMÉLISÉ dans tes équipement")
 		} else if p.equipement["COURONNE EN SUCRE CARAMÉLISÉ"] >= 1{
 			if p.money < 15 {
-				fmt.Println("Tu na pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
+				fmt.Println("Tu n'as pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
 			} else if p.money >= 15 {
 				p.AddInventory("Baguette Magique")
 				p.RemoveEquipement("COURONNE EN SUCRE CARAMÉLISÉ")
@@ -270,10 +270,10 @@ func (p *Perso) Forgeron() {
 	case "8": 
 	fmt.Println("\033[H\033[2J")
 	if p.equipement["ARMURE DE MACARONS MAGIQUES"] < 0 {
-		fmt.Println("Tu n'a pas d'ARMURE DE MACARONS MAGIQUES dans tes équipement")
+		fmt.Println("Tu n'as pas d'ARMURE DE MACARONS MAGIQUES dans tes équipement")
 	} else if p.equipement["ARMURE DE MACARONS MAGIQUES"] >= 1 {
 		if p.money < 15 {
-			fmt.Println("Tu na pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
+			fmt.Println("Tu n'as pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
 		} else if p.money >= 15 {
 			p.AddInventory("Fondant Au Chocolat")
 			p.AddInventory("Barbe à Papa")
@@ -288,10 +288,10 @@ func (p *Perso) Forgeron() {
 	case "9": 
 	fmt.Println("\033[H\033[2J")
 	if p.equipement["BOTTES DE COURSE CHOCOLATEE"] < 0 {
-		fmt.Println("Tu n'a pas de BOTTES DE COURSE CHOCOLATEE dans tes équipement")
+		fmt.Println("Tu n'as pas de BOTTES DE COURSE CHOCOLATEE dans tes équipement")
 	} else if p.equipement["BOTTES DE COURSE CHOCOLATEE"] >= 1 {
 		if p.money < 15 {
-			fmt.Println("Tu na pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
+			fmt.Println("Tu n'as pas assez de BERRY pour réparer tes BOTTES DE COURSE CHOCOLATEE")
 		} else if p.money >= 15 {
 			p.AddInventory("Barbe à papa")
 			p.RemoveEquipement("BOTTES DE COURSE CHOCOLATEE")

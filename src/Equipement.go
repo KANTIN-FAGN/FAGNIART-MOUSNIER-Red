@@ -49,7 +49,7 @@ func (u *Boot) CharBoot() {
 
 func (h *Head) LimiteHead() bool {
 	if h.count >= 1 {
-		fmt.Println("Tu a déja une COURONNE EN SUCRE CARAMÉLISÉE !")
+		fmt.Println("Tu as déjà une COURONNE EN SUCRE CARAMÉLISÉE !")
 		return false
 	}
 	return true
@@ -57,7 +57,7 @@ func (h *Head) LimiteHead() bool {
 
 func (t *Body) LimiteBody() bool {
 	if t.count >= 1 {
-		fmt.Println("Tu a déja des BOOTE DE COURSE CHOCOLATÉ !")
+		fmt.Println("Tu as déjà des BOOTE DE COURSE CHOCOLATÉ !")
 		return false
 	}
 	return true
@@ -65,7 +65,7 @@ func (t *Body) LimiteBody() bool {
 
 func (u *Boot) LimiteBoot() bool {
 	if u.count >= 1 {
-		fmt.Println("Tu a déja des BOOTE DE COURSE CHOCOLATÉ !")
+		fmt.Println("Tu as déjà des BOOTE DE COURSE CHOCOLATÉ !")
 		return false
 	}
 	return true
