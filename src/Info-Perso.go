@@ -20,9 +20,6 @@ type Perso struct {
 	inventorycount    int
 	inventoryupgrade  int
 	inventorycapacity int
-	headcount         int
-	bodycount         int
-	bootcount         int
 }
 
 func (p *Perso) CharCreation() {
@@ -47,6 +44,7 @@ func (p *Perso) CharCreation() {
 		p.lvl = 1
 		p.pvmax = 100
 		p.pvnow = p.pvmax / 2
+		p.money = 100
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
@@ -55,6 +53,7 @@ func (p *Perso) CharCreation() {
 		p.lvl = 1
 		p.pvmax = 80
 		p.pvnow = p.pvmax / 2
+		p.money = 100
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
@@ -67,6 +66,7 @@ func (p *Perso) CharCreation() {
 		p.lvl = 1
 		p.pvmax = 120
 		p.pvnow = p.pvmax / 2
+		p.money = 100
 		p.inventory = map[string]int{
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
@@ -100,9 +100,6 @@ func (p *Perso) CharCreation() {
 	p.manamax = 100
 	p.mananow = 100
 	p.inventorycount = 2
-	p.headcount = 0
-	p.bodycount = 0
-	p.bootcount = 0
 	fmt.Println("1 : Pour afficher le Menu")
 	fmt.Println("2 : Pour afficher les informations de ta Patisserie")
 	fmt.Println(" ")
