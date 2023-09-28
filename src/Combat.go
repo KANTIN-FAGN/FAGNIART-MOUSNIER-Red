@@ -144,7 +144,8 @@ func (c *Monstre) Fight(p *Perso) {
 		fmt.Println("✿ + 19 xp ! ✿")
 		p.xp += 19
 		p.Xp()
-		fmt.Println("Il te reste : ", p.pvnow, "/", p.pvmax)
+		fmt.Println("PV : ", p.pvnow, "/", p.pvmax)
+		fmt.Println("XP : ", p.xp, "/", p.xpmax)
 		fmt.Println(" ")
 		fmt.Println("1 : Pour Aller à la Fontaine Au Chocolat")
 		fmt.Scan(&choice)
