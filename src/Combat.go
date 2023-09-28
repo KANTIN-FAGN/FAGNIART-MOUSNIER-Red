@@ -141,7 +141,7 @@ func (c *Monstre) Fight(p *Perso) {
 		fmt.Println(" ")
 		fmt.Println("Bravo !! Tu a réussi à tuer cette Carrie.")
 		fmt.Println(" ")
-		fmt.Println("+ 19 xp")
+		fmt.Println("✿ + 19 xp ! ✿")
 		p.xp += 19
 		p.Xp()
 		fmt.Println("PV : ", p.pvnow, "/", p.pvmax)
