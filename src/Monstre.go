@@ -9,7 +9,6 @@ type Monstre struct {
 	pvmax    int
 	pvnow    int
 	pointatt int
-	initiative int
 }
 
 func (c *Monstre) CharCreationMonstre() {

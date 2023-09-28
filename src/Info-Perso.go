@@ -20,7 +20,6 @@ type Perso struct {
 	inventorycount    int
 	inventoryupgrade  int
 	inventorycapacity int
-	initiative        int
 }
 
 func (p *Perso) CharCreation() {
