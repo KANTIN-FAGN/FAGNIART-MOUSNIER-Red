@@ -51,6 +51,9 @@ func (p *Perso) CharCreation() {
 			"Éclat De Sucre Vivifiant": 1,
 			"Miel Vénéneux":            1,
 		}
+		p.attaque = map[string]int{
+			"Frappe Chocolatée": 1,
+		}
 	case "Cookie":
 		p.lvl = 1
 		p.pvmax = 80
@@ -61,8 +64,7 @@ func (p *Perso) CharCreation() {
 			"Miel Vénéneux":            1,
 		}
 		p.attaque = map[string]int{
-			"Frappe Chocolatée":   1,
-			"Épée en sucre glace": 1,
+			"Frappe Chocolatée": 1,
 		}
 	case "Croissant":
 		p.lvl = 1
@@ -130,9 +132,9 @@ func (p Perso) DisplayInfo() {
 	fmt.Println("Name  : ", p.name)
 	fmt.Println("Class  : ", p.class)
 	fmt.Println("Level  : ", p.lvl)
+	fmt.Println("PV : ", p.pvnow, "/", p.pvmax)
+	fmt.Println("XP : ", p.xp, "/", p.xpmax)
 	fmt.Println("Berry  : ", "฿", p.money)
-	fmt.Println("Points de vie maximum  : ", p.pvmax)
-	fmt.Println("Points de vie actuels   : ", p.pvnow)
 	fmt.Println("≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡")
 	fmt.Println(" ")
 
