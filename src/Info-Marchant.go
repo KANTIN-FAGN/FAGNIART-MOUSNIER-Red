@@ -74,8 +74,9 @@ func (p *Perso) Boutique() {
 	fmt.Println("9 : Pour Acheter 1 Barbe À Papa  ")
 	fmt.Println("10 : Pour Acheter l'Épée en sucre glace ")
 	fmt.Println("11 : Pour Acheter 1 Amélioration de 10 place d'inventaire")
-	fmt.Println("12 : Pour Achter 1 Skittles")
-	fmt.Println("13 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
+	fmt.Println("12 : Pour Acheter 1 Skittles")
+	fmt.Println("13 : Pour Vendre à la cabane des Objets")
+	fmt.Println("14 : Pour QUITTER La CABANE À SUCRERIES MYSTIQUES")
 	fmt.Printf("Indique ton choix sucrement délicieux : ")
 	fmt.Scan(&choice)
 	fmt.Println(" ")
@@ -272,6 +273,9 @@ func (p *Perso) Boutique() {
 		time.Sleep(2 *time.Second)
 		p.Boutique()
 	case "13":
+		fmt.Println("\033[H\033[2J")
+		p.Vente()
+	case "14":
 		fmt.Println("\033[H\033[2J")
 		fmt.Println("À Bientôt Dans La CABANE À SUCRERIES MYSTIQUES")
 		time.Sleep(2 *time.Second)

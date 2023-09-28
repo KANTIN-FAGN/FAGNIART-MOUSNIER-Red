@@ -24,9 +24,8 @@ func (p *Perso) ForetNoir() {
 	fmt.Println("Ici vivent les pâtisseries les moins délicieuses du pays !")
 	fmt.Println(" ")
 	time.Sleep(1 *time.Second)
-	fmt.Println("1 : ALLEZ EN ENTRAINEMENT ")
-	fmt.Println("2 : PARTIR À L'AVENTURE ")
-	fmt.Println("3 : RETOURNER À PÂTISSIA ")
+	fmt.Println("1 : ALLEZ TE COMBATTRE ")
+	fmt.Println("2 : RETOURNER À PÂTISSIA ")
 	fmt.Println(" ")
 	time.Sleep(1 *time.Second)
 	fmt.Printf("Choisi bien ton destin :  ")
@@ -37,9 +36,6 @@ func (p *Perso) ForetNoir() {
 		fmt.Println("\033[H\033[2J")
 		p.TrainingFight()
 	case "2":
-		fmt.Println("\033[H\033[2J")
-
-	case "3":
 		fmt.Println("\033[H\033[2J")
 		p.patissia()
 	default:

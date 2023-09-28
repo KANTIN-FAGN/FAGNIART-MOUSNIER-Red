@@ -19,7 +19,7 @@ func (p *Perso) patissia() {
 	fmt.Println(" ")
 	fmt.Println("1 : Se Rendre à La CABANE À SUCRERIES MYSTIQUES ")
 	fmt.Println("2 : Se Rendre à Chez Le BONLANGER")
-	fmt.Println("3 : S'aventurer Dans La FORÊT NOIR")
+	fmt.Println("3 : S'aventurer Dans La FORÊT NOIRE")
 	fmt.Println("4 : Quitter Pâtissia")
 	fmt.Println(" ")
 	fmt.Printf("Indique ton choix sucrement délicieux : ")
