@@ -6,7 +6,7 @@ import (
 )
 
 func (p *Perso) TrainingFight() {
-	c := Monstre{"Carrie", 40, 40, 5, 10}
+	c := Monstre{"Carrie", 40, 40, 5}
 	fmt.Println(" ")
 	fmt.Println(" ")
 	fmt.Println("			███████╗███╗   ██╗████████╗██████╗  █████╗ ██╗███╗   ██╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗ ")
@@ -152,6 +152,9 @@ func (c *Monstre) Fight(p *Perso) {
 		fmt.Println(" ")
 		fmt.Println("Bravo !! Tu a réussi à tuer cette Carrie.")
 		fmt.Println(" ")
+		fmt.Println("+ 19 xp")
+		p.xp += 19
+		p.Xp()
 		fmt.Println("Il te reste : ", p.pvnow, "/", p.pvmax)
 		fmt.Println(" ")
 		fmt.Println("1 : Pour Aller à la Fontaine Au Chocolat")
@@ -168,3 +171,4 @@ func (c *Monstre) Fight(p *Perso) {
 		}
 	}
 }
+

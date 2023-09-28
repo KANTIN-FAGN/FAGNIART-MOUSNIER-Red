@@ -9,6 +9,8 @@ type Perso struct {
 	name              string
 	class             string
 	lvl               int
+	xpmax             int
+	xp                int
 	pvmax             int
 	pvnow             int
 	money             int
@@ -20,7 +22,6 @@ type Perso struct {
 	inventorycount    int
 	inventoryupgrade  int
 	inventorycapacity int
-	initiative        int
 }
 
 func (p *Perso) CharCreation() {
@@ -101,6 +102,8 @@ func (p *Perso) CharCreation() {
 	p.manamax = 100
 	p.mananow = 100
 	p.inventorycount = 2
+	p.xpmax = 50
+	p.xp = 0
 	fmt.Println("1 : Pour afficher le Menu")
 	fmt.Println("2 : Pour afficher les informations de ta Patisserie")
 	fmt.Println(" ")
