@@ -25,14 +25,18 @@ type Perso struct {
 }
 
 func (p *Perso) CharCreation() {
+	var checkName bool = false
 	fmt.Println(" ")
 	fmt.Println("N'utilise pas de caractères spéciaux ni d'espaces dans ton pseudo sucré au sucre !")
 	fmt.Println(" ")
-	fmt.Printf("Choisi ton pseudo sucré au sucre : ")
-	fmt.Scan(&p.name)
-	fmt.Println(" ")
-	fmt.Println(" ")
-	time.Sleep(2 * time.Second)
+	for !checkName {
+		fmt.Printf("Choisi ton pseudo sucré au sucre : ")
+		fmt.Scan(&p.name)
+		fmt.Println(" ")
+		fmt.Println(" ")
+		time.Sleep(2 * time.Second)
+		checkName = IsAlpha(p.name)
+	}
 	for {
 		fmt.Printf("Choisis ta classe (parmi Muffin, Cookie, Croissant) : ")
 		fmt.Scan(&p.class)
@@ -84,13 +88,13 @@ func (p *Perso) CharCreation() {
 		p.pvnow = 99
 		p.money = 999999999999999999
 		p.inventory = map[string]int{
-			"Éclat De Sucre Vivifiant": 999,
-			"Fiolle De Miel Vénéneux":  999,
-			"Piqure De Lait Concentré": 999,
-			"Bageutte Magique":         999,
-			"Fondant Au Chocolat":      999,
-			"Ganache à La Vanille":     999,
-			"Barbe à Papa":             999,
+			"Éclat De Sucre Vivifiant": 1,
+			"Fiolle De Miel Vénéneux":  1,
+			"Piqure De Lait Concentré": 1,
+			"Bageutte Magique":         1,
+			"Fondant Au Chocolat":      2,
+			"Ganache à La Vanille":     1,
+			"Barbe à Papa":             1,
 		}
 		p.attaque = map[string]int{
 			"Frappe Chocolatée":   1,
