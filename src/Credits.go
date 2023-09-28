@@ -68,7 +68,8 @@ func (p Perso) Credits() {
 		return
 	default:
 		fmt.Println("\033[H\033[2J")
-		fmt.Println("Recommence mon donuts sucré au sucre ! ")
+		fmt.Println("Tu quitte quand même le jeu ")
+		time.Sleep(1 * time.Second)
 		return
 	}
 }

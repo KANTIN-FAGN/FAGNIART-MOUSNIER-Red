@@ -54,6 +54,7 @@ func (p *Perso) Boutique() {
 		fmt.Println(" ")
 	}
 	fmt.Println("\t ◥◣◥◣◥◣◥◣◥◣◥◣◥◣◥◣ ACCESSOIRES ◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤")
+
 	fmt.Println(" ")
 	for _, e := range ItemsAccessoires {
 		fmt.Printf("✿ %d - %s ฿  %d\n", e.index, e.name, e.price)
@@ -233,6 +234,7 @@ func (p *Perso) Boutique() {
 				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette item !")
 			} else if p.money >= 46 {
 				fmt.Println("+ l'Épée en sucre glace\n")
+				p.AddAttaque("l'Épée en sucre glace")
 				time.Sleep(100 * time.Millisecond)
 				fmt.Println("- 46 ฿ ")
 				p.money -= 46
