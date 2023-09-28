@@ -85,7 +85,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 4 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette potion !")
 			} else if p.money >= 4 {
 				p.AddInventory("Éclat De Sucre Vivifiant")
 				fmt.Println(" + Éclat De Sucre Vivifiant\n ")
@@ -102,7 +102,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 6 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Potion !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette potion !")
 			} else if p.money >= 6 {
 				p.AddInventory("Miel Vénéneux")
 				fmt.Println(" + Miel Vénéneux\n")
@@ -119,7 +119,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 3 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Attaque !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette attaque !")
 			} else if p.money >= 3 {
 				p.AddInventory("Piqure de Lait Concentré")
 				fmt.Println("+ 1 Piqure de Lait Concentré\n")
@@ -134,7 +134,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 25 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Attaque !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette attaque !")
 			} else if p.money >= 25 {
 				p.AddAttaque("Pain D'épis'Taculaire")
 				fmt.Println(" + Pain D'épis'Taculaire\n")
@@ -149,7 +149,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 45 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Arme !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette arme !")
 			} else if p.money >= 45 {
 				p.AddEquipement("Dague du Donut Délectable")
 				fmt.Println(" + Dague du Donut Délectable\n ")
@@ -165,7 +165,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 4 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette item !")
 			} else if p.money >= 4 {
 				p.AddInventory("Baguette Magique")
 				fmt.Println(" + Baguette Magique\n")
@@ -181,7 +181,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 7 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+				fmt.Println("Tu n'as pas assez de BERRY pour Acheter Cette Item !")
 			} else if p.money >= 7 {
 				p.AddInventory("Fondant Au Chocolat")
 				fmt.Println(" + Fondant Au Chocolat\n")
@@ -197,7 +197,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 3 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+				fmt.Println("Tu n'as pas assez de BERRY pour Acheter Cette Item !")
 			} else if p.money >= 3 {
 				p.AddInventory("Ganache À La Vanille")
 				fmt.Println(" + Ganache À La Vanille\n")
@@ -213,7 +213,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 1 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette item !")
 			} else if p.money >= 1 {
 				p.AddInventory("Barbe à Papa")
 				fmt.Println(" + Barbe à Papa\n")
@@ -229,7 +229,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 46 {
-				fmt.Println("Tu n'as pas assez de Berry pour acheter cette Item !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette item !")
 			} else if p.money >= 46 {
 				fmt.Println("+ l'Épée en sucre glace\n")
 				time.Sleep(100 * time.Millisecond)
@@ -259,7 +259,7 @@ func (p *Perso) Boutique() {
 		fmt.Println("\033[H\033[2J")
 		if p.LimiteInventory() {
 			if p.money < 4 {
-				fmt.Println("Tu Na Pas Assez De Berry Pour Acheter Cette Item !")
+				fmt.Println("Tu n'as pas assez de BERRY pour acheter cette item !")
 			} else if p.money >= 4 {
 				p.AddInventory("Skittles")
 				fmt.Println(" + Skittles\n")

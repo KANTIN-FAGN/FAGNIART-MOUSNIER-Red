@@ -19,9 +19,9 @@ func (p *Perso) TrainingFight() {
 	fmt.Println(" ")
 	fmt.Println(" ")
 	fmt.Println("Salut à toi ", p.name, "le", p.class)
-	fmt.Println("Nous avons capturés plusieurs Carries pour pouvoir t'entraîner avant d'aller t'aventurer dans le forêt Noir.")
+	fmt.Println("Nous avons capturé plusieurs Carries pour te permettre de t'entraîner avant de t'aventurer dans la forêt Noire.")
 	fmt.Println(" ")
-	fmt.Println("1 : Pour combattre la Carries d'entrainement ! ")
+	fmt.Println("1 : Pour combattre la Carrie d'entrainement ! ")
 	fmt.Println("2 : Pour retourner à PATISSIA")
 	fmt.Println(" ")
 	fmt.Printf("Entre ton choix :  ")
@@ -53,14 +53,14 @@ func (c *Monstre) Fight(p *Perso) {
 	fmt.Println(" ")
 	fmt.Println(" ")
 	c.CharCreationMonstre()
-	fmt.Println("Attention prepare toi, tu vas rentrer dans la cage en chocolat. ")
+	fmt.Println("Attention, prépare-toi, tu vas entrer dans la cage en chocolat.")
 	tourDeCombat := 1
 	for !(c.pvnow <= 0 || p.pvnow <= 0) {
 		if tourDeCombat%3 == 0 {
 			fmt.Println(" ")
 			fmt.Println(" ")
 			time.Sleep(2 * time.Second)
-			fmt.Print(" Attention, carrie s'enerve ! Elle inflige le double de ses dégats ce tour !")
+			fmt.Print("Attention, Carrie s'énerve ! Elle inflige le double de ses dégâts ce tour !")
 			fmt.Println(" ")
 			degats := 5 * 2
 			time.Sleep(2 * time.Second)
@@ -72,7 +72,7 @@ func (c *Monstre) Fight(p *Perso) {
 			fmt.Println(" ")
 			fmt.Println(" ")
 			time.Sleep(2 * time.Second)
-			fmt.Println("Le monstre attaque !")
+			fmt.Println("La Carrie attaque !")
 			fmt.Println(" ")
 			time.Sleep(2 * time.Second)
 			fmt.Println("- 5 HP")
@@ -102,7 +102,7 @@ func (c *Monstre) Fight(p *Perso) {
 		case "1":
 			fmt.Println("\033[H\033[2J")
 			if p.mananow < 7 {
-				fmt.Println("Tu a pas assez de mana pour continuer, prendre une piqure de lait concentré !!")
+				fmt.Println("Tu n'as pas assez de mana pour continuer, prends une piqûre de lait concentré !")
 			} else if p.LookAttaque("Frappe Chocolatée") {
 				fmt.Println("Tu lui à décroché un pain au chocolat !")
 				fmt.Println("Carrie : - 7 HP")
@@ -117,7 +117,7 @@ func (c *Monstre) Fight(p *Perso) {
 		case "2":
 			fmt.Println("\033[H\033[2J")
 			if p.mananow < 14 {
-				fmt.Println("Tu a pas assez de mana pour continuer, prendre une piqure de lait concentré !!")
+				fmt.Println("Tu n'as pas assez de mana pour continuer, prends une piqûre de lait concentré !")
 			} else if p.LookAttaque("Épée en sucre glace") {
 				fmt.Println("Tu lui à envoyé un coup d'épée sucrement parfait !!")
 				fmt.Println("Carrie : - 10 HP")

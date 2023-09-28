@@ -26,7 +26,7 @@ type Perso struct {
 
 func (p *Perso) CharCreation() {
 	fmt.Println(" ")
-	fmt.Println("N'utilise pas des caractères spéciaux et des espaces dans ton pseudo sucré au sucre !!!")
+	fmt.Println("N'utilise pas de caractères spéciaux ni d'espaces dans ton pseudo sucré au sucre !")
 	fmt.Println(" ")
 	fmt.Printf("Choisi ton pseudo sucré au sucre : ")
 	fmt.Scan(&p.name)

@@ -113,16 +113,13 @@ func (p *Perso) AddAttaque(item string) {
 	p.attaque[item] = p.attaque[item] + 1
 	time.Sleep(1 * time.Second)
 	for i := range p.attaque {
-		fmt.Println("✿ Tu a Apris ", p.attaque[i], i, " ✿")
+		fmt.Println("✿ Tu as appris ", p.attaque[i], i, " ✿")
 	}
 }
 
 func (p *Perso) AddEquipement(item string) {
 	p.equipement[item] = p.equipement[item] + 1
 	time.Sleep(1 * time.Second)
-	for i := range p.equipement {
-		fmt.Println("✿ Tu a dans tes EQUIPEMENT", p.equipement[i], i, " ✿")
-	}
 }
 
 func (p *Perso) RemoveInventory(item string) {
@@ -139,7 +136,7 @@ func (p *Perso) RemoveEquipement(item string) {
 
 func (p *Perso) LimiteInventory() bool {
 	if p.inventorycount >= 10 {
-		fmt.Println("Tu a trop de SUCRERIES dans ton inventaire !")
+		fmt.Println("Tu as trop de SUCRERIES dans ton inventaire !")
 		return false
 	}
 	return true
@@ -189,7 +186,7 @@ func (p *Perso) UpgradeInventorySlot() {
 
 func (p *Perso) CheckUpInventory() bool {
 	if p.inventoryupgrade == 3 {
-		fmt.Println("Désole ma sucrerie mais ton inventaire est deja completement amélioré .")
+		fmt.Println("Désolé, ma sucrerie, mais ton inventaire est déjà complètement amélioré.")
 		return true
 	}
 
